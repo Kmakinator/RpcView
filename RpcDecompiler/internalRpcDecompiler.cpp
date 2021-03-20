@@ -83,7 +83,8 @@ BOOL __fastcall getAllTypesSortedInAList(
 		// remove from listTypesToDefine elements that already are in 
 		for(auto iter = listAllTypesSorted.begin(); iter != listAllTypesSorted.end(); iter++)
 		{
-			 listTypesToDefine.remove(*iter);
+			auto removed = std::remove(listTypesToDefine.begin(), listTypesToDefine.end(), *iter);
+			listTypesToDefine.erase(removed, listTypesToDefine.end());
 		}
 				
 

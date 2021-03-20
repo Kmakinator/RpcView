@@ -1,5 +1,5 @@
 #include "internalRpcUtils.h"
-#include <list>
+//#include <list>
 #include <sstream>
 
 
@@ -38,8 +38,11 @@ std::string narrow(
 	//std::use_facet< std::ctype<wchar_t> > (loc).narrow(ws.data(), ws.data() + ws.size(), '?', &buffer[0]);
 
 	//return std::string(&buffer[0], buffer.size());
+	using convert_typeX = std::codecvt_utf8<wchar_t>;
+    std::wstring_convert<convert_typeX, wchar_t> converterX;
 
-	return std::string(ws.begin(), ws.end());
+    return converterX.to_bytes(ws);
+	// return std::string(ws.begin(), ws.end());
 }
 
 

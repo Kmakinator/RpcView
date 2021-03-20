@@ -10,7 +10,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
 # Find the QtWidgets library
-# set CMAKE_PREFIX_PATH=C:\Qt\Qt5.9.1\5.9.1\msvc2015 or c:\Qt\Qt5.9.1\5.9.1\msvc2015_64
+set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/msvc2019_64") 
 find_package(Qt5Widgets)
     
 add_executable(
@@ -47,4 +47,4 @@ add_executable(
 # C4091 in ShlObj.h and Dbghelp.h
 # C4127	(conditional expression is constant) in qt headers
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/wd4091 /wd4127")
-target_link_libraries(RpcView Qt5::Widgets $ENV{CMAKE_PREFIX_PATH}/lib/Qt5WinExtras.lib)
+target_link_libraries(RpcView Qt5::Widgets "C:/Qt/5.15.2/msvc2019_64/lib/Qt5WinExtras.lib")

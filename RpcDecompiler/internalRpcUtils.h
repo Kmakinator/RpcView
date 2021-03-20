@@ -2,6 +2,7 @@
 #define _RPC_UTILS_
 
 #include <string>
+#include <codecvt>
 #include <locale>
 #include <vector>
 #include <tchar.h>
